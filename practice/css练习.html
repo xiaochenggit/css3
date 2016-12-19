@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3练习</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<style type="text/css">
+	 	@charset "utf-8";
+		#shadow{
+			height: 100px;
+			width: 100px;
+			border-radius: 4px;
+			background-image: linear-gradient(to top left,red,black);
+			margin: 20px auto;
+			box-shadow: 0px 0px 6px 2px #000;
+		}
+		#demo{
+			width: 1200px;
+			margin: 30px auto;
+		}
+		.tip{
+			font: 600 16px/30px "微软雅黑";
+
+		}
+		#ellipsis{
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			width: 100px;
+			margin: 20px auto;
+		}
+		@font-face{
+			font-family: "MOOC Font";
+			src: url("http://www.imooc.com/Amaranth-BoldItalic.otf");
+		}
+		#font{
+			font: 20px/40px "MOOC Font";
+			text-align: center;
+
+		}
+		#textShadow{
+			font: 600 40px/40px "MOOC Font";
+			text-align: center;
+			color: #000;
+			text-shadow: 1px 0px 2px red;
+		}
+		#backgroundOrigin{
+			width: 200px;
+			height: 200px;
+			padding: 30px;
+			border: 20px dashed #000;
+			background: #ccc url('http://static.mukewang.com/static/img/logo_index.png') no-repeat;
+			background-origin: border-box;  /* content-box; padding-box; */ 
+			background-clip: content-box ;
+			margin: 20px auto;
+		}
+		#backgroundSize{
+			width: 300px;
+			height: 150px;
+			background: url('http://static.mukewang.com/static/img/logo_index.png') no-repeat;
+			margin: 20px auto;
+			background-size: contain;
+		}
+		#back1{
+			width: 300px;
+			height: 200px;
+			margin: 20px auto;
+			border: 1px solid #ccc;
+			background: url('http://img.mukewang.com/54cf2365000140e600740095.jpg') left top no-repeat,url('http://img.mukewang.com/54cf238a0001728d00740095.jpg') 100px 0 no-repeat,
+				url('http://img.mukewang.com/54cf23b60001fd9700740096.jpg') 200px 0 no-repeat;
+		}
+		#back2{
+			width: 300px;
+			height: 200px;
+			margin: 20px auto;
+			border: 1px solid #ccc;
+			background: url('http://static.mukewang.com/static/img/logo_index.png') left top/70% 50% no-repeat,
+						url('http://static.mukewang.com/static/img/logo_index.png') right bottom/60% 45% no-repeat;
+		}
+		#attr{
+			width: 200px;
+			font: 16px/30px '微软雅黑';
+			text-align: center;
+			margin: 20px auto;
+		}
+		p[class*=red]{
+			color: red;
+		}
+		p[title$=green]{
+			color: green;
+		}
+		a[href$=html]{
+			color: purple;
+		}
+		:root{
+			background-color: #f6f6f6;
+		}
+		#not,#empty,#target,#selection{
+			width: 200px;
+			font: 16px/30px '微软雅黑';
+			text-align: center;
+			margin: 20px auto;
+		}
+	   	#not p:not([class$='rexdd']){
+	   		color: red;
+	   	}
+		#empty :empty{
+			height: 30px;
+			background-color: #f60;	
+		}
+		#linke:target p{
+			color: red;
+		}
+		#enabled{
+			width: 200px;
+			margin: 20px auto;
+		}
+		#enabled input:enabled{
+			background-color: red;
+		}
+		#enabled input[type="text"]:disabled{
+			background-color: #000;
+		}
+		#selection{
+			width: 100%;
+		}
+		#selection::selection{
+			background-color: #f60;
+		}
+		#selection::-moz-selection{
+			background-color: #f60;
+		}
+		#readonly{
+			width: 200px;
+			margin: 20px auto;
+		}
+		#readonly input:read-only{
+			border-color: red;
+		}
+		#readonly input:read-write{
+			border: 2px solid #ccc;
+		}
+		#rotate{
+			width: 200px;
+			height: 100px;
+			margin: 20px auto;
+			background-color: #ccc;
+		}
+		#rotate:hover{
+			transform:rotate(20deg);
+		}
+		#skew{
+			width: 200px;
+			height: 100px;
+			margin: 20px auto;
+			background-color: #ccc;
+			transform:skew(45deg);
+		}
+		#scale{
+			width: 200px;
+			height: 200px;
+			margin: 20px auto;
+			border: 1px solid #ccc;
+		}
+		#scale:hover div{
+			transform: scale(0.8);
+		}
+		#scale div{
+			width: 100%;
+			height: 100%;
+			background-color: red;
+		}
+		#translate{
+			height: 300px;
+			position: relative;
+		}
+		#translate span{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: inline-block;
+			width: 100px;
+			background-color: yellow;
+			padding: 10px;
+			line-height: 30px;
+			border-radius: 8px;
+			transform: translate(-50%, -50%);
+		}
+		#matrix{
+			height: 300px;
+		}
+		#matrix div{
+			width: 200px;
+			height: 150px;
+			background-color: red;
+			transform: matrix(0.8, 0, 0, 0.8, 50, 50);
+		}
+		#origin{
+			width: 200px;
+			height: 200px;
+			margin: 20px auto;
+			background-color: #f60;
+			transform-origin: right top;
+			transform: rotate(30deg);
+		}
+		#transition div{
+			width: 200px;
+			height: 200px;
+			margin: 20px auto;
+			background-color: red;
+			transition: all 0.5s ease-in 0.1s;
+		}
+		#transition div:hover{
+			background-color: #000;
+			width: 400px;
+		}
+		#timingFunction{
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+			margin: 20px auto;
+			border-radius: 200px;
+			transition: all 1s linear 0.2s ;
+		}
+		#timingFunction:hover{
+			border-radius: 0px;
+		}
+		#sition{
+			width: 100px;
+			height: 100px;
+			background-color:#f60;
+			margin: 20px auto;
+			transition: all 0.5s linear 0.1s;
+		}
+		#sition:hover{
+			transform: rotate(30deg);
+			/* transform: translate(50px,50px) */
+			border-radius: 10px;
+		}
+		@keyframes change{
+			0%{
+				transform: rotate(0)
+			}
+			100%{
+				transform: rotate(360deg)
+			}
+		}
+		#keyframes{
+			width: 200px;
+			height: 200px;
+			background-color:red;
+			margin: 20px auto;
+			animation: change 1s linear 2s infinite;
+			animation-direction: alternate;
+			animation-play-state: paused;/* 暂停 */
+		}
+		#keyframes:hover{
+			animation-play-state: running;/* 开始 */
+		}
+		#columns{
+			height: 200px;
+			margin: 20px auto;
+			columns: 2;
+			column-count: 2;
+			column-gap: 100px;
+			column-rule: 3px solid #ccc;
+		}
+		#columns span{
+			display: inline-block;
+			column-span: all;/* 挎列 */
+		}
+	</style>
+</head>
+<body>
+	<div id="demo">
+		<p class="tip">阴影效果,背景渐变</p>
+		<div id="shadow">
+		</div>
+		<p class="tip">超出部分省略号...</p>
+		<p id="ellipsis">超出部分省略号显示</p>
+		<p class="tip">@font-face  css中先引用地址</p>
+		<p id="font">我是引用的外部字体</p>
+		<p class="tip">CSS text-shadow</p>
+		<p id="textShadow">字体阴影效果</p>
+		<p class="tip">css3背景 backgroundOrigin</p>
+		<p id="backgroundOrigin">背景</p>
+		<p class="tip">background-size</p>
+		<p id="backgroundSize"></p>
+		<p class="tip">多重背景</p>
+		<p id="back1"></p>
+		<p id="back2"></p>
+		<p class="tip">熟悉选择器</p>
+		<div id="attr">
+			<p class="colorred">我的颜色是红色</p>
+			<p title="dadadagreen">我的颜色是绿色</p>
+			<a href="xxx.html">我的颜色是紫色</a>
+		</div>
+		<p class="tip">not否定选择器</p>
+		<div id="not">
+			<p>否定选择器</p>
+			<p class="drexdd">否定选择器</p>
+		</div>
+		<p class="tip">CSS3 结构性伪类选择器—empty</p>
+		<div id="empty">
+			<p>我不是空的元素</p>
+			<p></p>
+		</div>
+		<p class="tip">CSS3 结构性伪类选择器—target</p>
+		<div id="target">
+			<div id="linke">
+				<p>不变色</p>
+				<a href="#link">点我</a>
+				<a href="#linke">点我</a>
+				<p>变色</p>
+			</div>
+		</div>
+		<p class="tip">enabled disabled</p>
+		<div id="enabled">
+			<input type="text" name="">
+			<input type="text" name="" disabled>
+		</div>
+		<p class="tip">selection火狐下面要加前缀</p>
+		<div id="selection">
+			“::selection”伪元素是用来匹配突出显示的文本。浏览器默认情况下，选择网站文本是深蓝的背景，白色的字体， 有的设计要求不使用上图那种浏览器默认的突出文本效果，需要一个与众不同的效果，此时“::selection”伪元素就非常的实用。不过在Firefox浏览器还需要添加前缀。
+		</div>
+		<p class="tip">readyonly  - read-write</p>
+		<div id="readonly">
+			<input type="text" readonly="readonly" value="肖成">
+			<input type="text" name="" value="大熊">
+		</div>
+		<p class="tip">旋转 transform:totate</p>
+		<div id="rotate">
+			
+		</div>
+		<p class="tip"> 扭曲 transform:skew() skewX skewY</p>
+		<div id="skew">
+			<span>扭曲</span>
+		</div>
+		<p class="tip">缩放 transform-scale</p>
+		<div id="scale">
+			<div></div>
+		</div>
+		<p class="tip">transform:translate()实现垂直居中</p>
+		<div id="translate">
+			<span>我要实现垂直居中</span>
+		</div>
+		<p class="tip">transform:matrix</p>
+		<div id="matrix">
+			<div>
+			</div>
+		</div>
+		<p class="tip">transform-origin 改变原点位置</p>
+		<div id="origin">
+			
+		</div>
+		<p class="tip">transition</p>
+		<div id="transition">
+			<div>
+				
+			</div>
+		</div>
+		<p class="tip">transition-timing-function</p>
+		<div id="timingFunction">
+			
+		</div>
+		<p class="tip">transition和transform 结合</p>
+		<div id="sition">
+			
+		</div>
+		<p class="tip">keyframes</p>
+		<div id="keyframes">
+			
+		</div>
+		<p class="tip">多列布局</p>
+		<div id="columns">
+			<p>多列布局到底是什么样子的呢?多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢</p>
+			<span>多列布局到底是什么样子的呢?多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢多列布局到底是什么样子的呢</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	</script>
+</body>
+</html>
